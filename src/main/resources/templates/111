@@ -1,0 +1,19 @@
+CREATE TABLE `lesson`.`role` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `role` VARCHAR(45) not NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `lesson`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `age` INT NULL,
+  PRIMARY KEY (`id`));
+
+  ALTER TABLE `lesson`.`user`
+  ADD CONSTRAINT `id`
+    FOREIGN KEY (`id`)
+    REFERENCES `lesson`.`role` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE;
